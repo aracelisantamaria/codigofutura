@@ -1,0 +1,11 @@
+C:\Users\Aracelis\Desktop\Stellar-Clase5\token-bdb\target\debug\deps\const_oid-1d4e14ebfa3b22b3.d: C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\lib.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\checked.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\arcs.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\encoder.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\error.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\parser.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\../README.md
+
+C:\Users\Aracelis\Desktop\Stellar-Clase5\token-bdb\target\debug\deps\libconst_oid-1d4e14ebfa3b22b3.rmeta: C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\lib.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\checked.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\arcs.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\encoder.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\error.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\parser.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\../README.md
+
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\lib.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\checked.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\arcs.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\encoder.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\error.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\parser.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\const-oid-0.9.6\src\../README.md:

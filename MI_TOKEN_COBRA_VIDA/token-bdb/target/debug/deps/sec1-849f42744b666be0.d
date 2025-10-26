@@ -1,0 +1,11 @@
+C:\Users\Aracelis\Desktop\Stellar-Clase5\token-bdb\target\debug\deps\sec1-849f42744b666be0.d: C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\lib.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\point.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\error.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\parameters.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\private_key.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\traits.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\../README.md
+
+C:\Users\Aracelis\Desktop\Stellar-Clase5\token-bdb\target\debug\deps\libsec1-849f42744b666be0.rmeta: C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\lib.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\point.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\error.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\parameters.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\private_key.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\traits.rs C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\../README.md
+
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\lib.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\point.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\error.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\parameters.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\private_key.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\traits.rs:
+C:\Users\Aracelis\.cargo\registry\src\index.crates.io-1949cf8c6b5b557f\sec1-0.7.3\src\../README.md:
