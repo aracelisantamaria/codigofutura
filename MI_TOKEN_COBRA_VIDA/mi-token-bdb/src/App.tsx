@@ -68,15 +68,12 @@ function App() {
 
   // ESTADO PARA TEMA OSCURO/CLARO
   const [darkMode, setDarkMode] = useState<boolean>(() => {
-    // Leer preferencia guardada al iniciar
     const saved = localStorage.getItem('bdb-theme')
-    return saved ? saved === 'dark' : true // Por defecto oscuro
+    return saved ? saved === 'dark' : true
   })
 
-  // Obtener tema actual
   const theme = darkMode ? themes.dark : themes.light
 
-  // Guardar preferencia cuando cambia
   useEffect(() => {
     localStorage.setItem('bdb-theme', darkMode ? 'dark' : 'light')
   }, [darkMode])
@@ -131,7 +128,7 @@ function App() {
       if (typeof result === 'string') {
         balanceValue = result
       } else if (typeof result === 'number' || typeof result === 'bigint') {
-        balanceValue = result.toString()
+        balanceValue = String(result)
       } else if (result && typeof result === 'object') {
         const resultObj = result as any
         balanceValue = resultObj.result || resultObj.value || '0'
@@ -150,7 +147,7 @@ function App() {
   }
 
   // ========================================
-  // FUNCIÓN: Transferir Tokens
+  // FUNCIÓN: Transferir Tokens (CORREGIDA)
   // ========================================
   const transferTokens = async () => {
     if (!toAddress || amount <= 0) {
@@ -165,6 +162,11 @@ function App() {
 
     setTransferring(true)
     try {
+      console.log('🚀 Iniciando transferencia...')
+      console.log('Desde:', publicKey)
+      console.log('Hacia:', toAddress)
+      console.log('Monto:', amount, 'BDB')
+
       const contractId = import.meta.env.VITE_BDB_CONTRACT_ID
       const client = new TokenBdbClient({
         contractId: contractId,
@@ -173,43 +175,67 @@ function App() {
         publicKey: publicKey
       })
 
-      const transferResult = await client.transfer(
+      // PASO 1: Construir y firmar la transacción
+      console.log('📝 Construyendo transacción...')
+      const tx = await client.transfer(
         {
           from: publicKey,
           to: toAddress,
           amount: BigInt(amount * 10000000)
-        },
-        {
-          signTransaction: async (xdr: string) => {
-            const signed = await freighterApi.signTransaction(xdr, {
-              networkPassphrase: 'Test SDF Network ; September 2015',
-              accountToSign: publicKey
-            })
-            return signed
-          }
         }
       )
 
-      console.log('Transfer exitoso:', transferResult)
-      alert('¡Transferencia exitosa!')
+      console.log('✍️ Solicitando firma en Freighter...')
       
-      // Esperar 3 segundos para que se confirme en la blockchain
+      // PASO 2: Firmar y ENVIAR la transacción (CRÍTICO)
+      const sentTx = await tx.signAndSend({
+        signTransaction: async (xdr: string) => {
+          console.log('🔐 Firmando con Freighter...')
+          const signed = await freighterApi.signTransaction(xdr, {
+            networkPassphrase: 'Test SDF Network ; September 2015',
+            accountToSign: publicKey
+          })
+          console.log('✅ Transacción firmada!')
+          return signed
+        }
+      })
+
+      // PASO 3: Verificar resultado
+      console.log('📤 Transacción enviada!')
+      console.log('Objeto sentTx:', sentTx)
+      console.log('Propiedades de sentTx:', Object.keys(sentTx))
+
+      // Si llegamos acá sin error, la transacción fue exitosa
+      alert('¡Transferencia exitosa! 🎉')
+
+      // Actualizar balance después de 3 segundos
       setTimeout(() => {
+        console.log('🔄 Actualizando balance...')
         getBalance()
       }, 3000)
-      
+
+      // Limpiar formulario
       setToAddress('')
       setAmount(0)
+
     } catch (error: any) {
-      console.error('Error en transfer:', error)
-      if (error.message && error.message.includes('User declined')) {
-        alert('Transferencia cancelada por el usuario')
-      } else {
-        alert('Error en la transferencia: ' + error.message)
-      }
-    } finally {
-      setTransferring(false)
+        console.error('Error en transfer:', error)
+    
+    // Verificar diferentes tipos de cancelación del usuario
+    if (error.message && (
+        error.message.includes('User declined') || 
+        error.message.includes('User rejected') ||
+        error.message.includes('user rejected')
+    )) {
+      alert('❌ Transferencia cancelada por el usuario')
+    } else if (error.name === 'UserRejectedError') {
+      alert('❌ Transferencia cancelada por el usuario')
+    } else {
+      alert('❌ Error en la transferencia: ' + (error.message || 'Error desconocido'))
     }
+  } finally {
+    setTransferring(false)
+  }
   }
 
   // ========================================
@@ -247,7 +273,7 @@ function App() {
             right: '20px',
             padding: '10px 15px',
             fontSize: '20px',
-            backgroundColor: theme.buttonBg,
+            background: theme.buttonBg,
             color: theme.buttonText,
             border: 'none',
             borderRadius: '50%',
